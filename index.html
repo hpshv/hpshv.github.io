@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Malam</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+
+<body>
+    <script>
+        let nama;
+        Swal.fire({ title: 'Hallo', text: 'Selamat Malam :)', type: 'success', footer: '<p>hpshv</p>' }).then(function () {
+            const {
+                value: name
+            } = Swal.fire({
+                title: 'Masukkan nama anda',
+                input: 'text',
+                footer: '<p>hpshv</p>',
+                inputLabel: '',
+                inputValidator: (value) => {
+                    if (!value) {
+                        return 'Isi dulu woe'
+                    } else {
+                        nama = value;
+                    }
+                }
+            }).then(function () {
+                const pertanyaan = Swal.fire({
+                    title: `Hai, ${nama} gimana hari ini?`,
+                    footer: '<p>hpshv</p>',
+                    showCancelButton: true,
+                    confirmButtonText: 'Menyenangkan',
+                    cancelButtonColor: 'green',
+                    cancelButtonText: 'Biasa aja'
+                }).then((result) => {
+                    if (result.value) {
+                        Swal.fire({
+                            title: 'YAYYY!!',
+                            text: 'Semangat teroooosss...Semoga besok lebih menyenangkan lagi!',
+                            type: 'success',
+                            footer: '<p>hpshv</p>'
+                        }).then(function () {
+                            Swal.fire({
+                                title: 'Udah malem nih...',
+                                text: 'Jangan Begadang ya!',
+                                type: 'success',
+                                footer: '<p>hpshv</p>'
+                            }).then(function () {
+                                Swal.fire({
+                                    title: 'Istirahat yang cukup',
+                                    text: '',
+                                    type: 'success',
+                                    footer: '<p>hpshv</p>'
+                                }).then(function () {
+                                    Swal.fire({
+                                        title: 'Makan yang teratur',
+                                        text: '',
+                                        type: 'success',
+                                        footer: '<p>hpshv</p>'
+                                    }).then(function () {
+                                        Swal.fire({
+                                            title: 'Jaga Kesehatan ya ❤',
+                                            text: '',
+                                            type: 'success',
+                                            footer: '<p>hpshv</p>'
+                                        }).then(function () {
+                                            Swal.fire({
+                                                title: 'Bye 👋🏻',
+                                                text: `Good night ${nama}`,
+                                                type: 'success',
+                                                confirmButtonText: 'OK, BYE 👋🏻',
+                                                footer: '<p>hpshv</p>'
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    }
+                    else if (result.dismiss) {
+                        Swal.fire('TETAP SEMANGAT YA!!', 'Semoga besok lebih menyenangkan😉', 'info').then(function () {
+                            Swal.fire({
+                                title: 'Udah malem nih...',
+                                text: 'Jangan Begadang ya!',
+                                type: 'success',
+                                footer: '<p>hpshv</p>'
+                            }).then(function () {
+                                Swal.fire({
+                                    title: 'Istirahat yang cukup',
+                                    text: '',
+                                    type: 'success',
+                                    footer: '<p>hpshv</p>'
+                                }).then(function () {
+                                    Swal.fire({
+                                        title: 'Makan yang teratur',
+                                        text: '',
+                                        type: 'success',
+                                        footer: '<p>hpshv</p>'
+                                    }).then(function () {
+                                        Swal.fire({
+                                            title: 'Jaga Kesehatan ya ❤',
+                                            text: '',
+                                            type: 'success',
+                                            footer: '<p>hpshv</p>'
+                                        }).then(function () {
+                                            Swal.fire({
+                                                title: 'Bye 👋🏻',
+                                                text: `Good night ${nama}`,
+                                                type: 'success',
+                                                confirmButtonText: 'OK, BYE 👋🏻',
+                                                footer: '<p>hpshv</p>'
+                                            })
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
